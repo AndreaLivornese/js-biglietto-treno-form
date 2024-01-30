@@ -32,8 +32,6 @@ buttonCalcolaElemnt.addEventListener("click",
             alert("Lunghezza della distanza non valida! Il risultato uscirà falsato");
         }
 
-        console.log(age, travel);
-
         let price= busRate * travel;
         let totalPrice=0;
 
