@@ -2,6 +2,25 @@ body{
     background-color: blue;
 }
 
+header{
+    color:yellow;
+}
+
+header p{
+    font-weight: bold;;
+}
+
 #ticketNamBox{
     background-color: gray;
+}
+
+
+
+td{
+    padding-top: 50px !important;
+}
+
+
+#title-ticket{
+    color:yellow;
 }
