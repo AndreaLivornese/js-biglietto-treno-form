@@ -19,7 +19,18 @@ buttonCalcolaElemnt.addEventListener("click",
         const busRate=0.21;
 
         const age=Number( document.querySelector("#age").value );
+
+        // controllo sull'input
+        if(age < 0 || age > 100 || Number.isNaN(age)){
+            alert("Numero di età non valido! Il risultato uscirà falsato");
+        }
+
         const travel=Number( document.querySelector("#travel").value);
+
+        // controllo sull'input
+        if(travel < 0 || Number.isNaN(travel)){
+            alert("Lunghezza della distanza non valida! Il risultato uscirà falsato");
+        }
 
         console.log(age, travel);
 
@@ -32,6 +43,7 @@ buttonCalcolaElemnt.addEventListener("click",
             totalPrice= price - discount;
             document.getElementById("result").innerHTML = totalPrice.toFixed(2) + "€";
             
+            // stampa tipologia di biglietto
             document.querySelector("#type").innerHTML = "Senior -40%";
 
         }else if (age <18) {
@@ -39,12 +51,15 @@ buttonCalcolaElemnt.addEventListener("click",
             const discount =  price * 20 / 100;
             totalPrice= price - discount;
             document.getElementById("result").innerHTML = totalPrice.toFixed(2) + "€";
+
+            // stampa tipologia di biglietto
             document.querySelector("#type").innerHTML = "Young -20%";
 
         } else {
 
             document.getElementById("result").innerHTML = price.toFixed(2) + "€";
 
+            // stampa tipologia di biglietto
             document.querySelector("#type").innerHTML = "Standard";
         }
     }
@@ -55,22 +70,27 @@ buttonCalcolaElemnt.addEventListener("click",
 
 buttonCalcolaElemnt.addEventListener("click",
     function(){
+
+        // stampa del nome sul biglietto
         let fullName= document.querySelector("#fullName").value;
+
+        
         document.querySelector("#ticketFullName").innerHTML = fullName;
 
+        // permette la comparsa del pedice nel biglietto
         document.querySelector("#pedice").className = "active";
 
 
         const codeCP= Math.floor(Math.random() * 90000 + 10000); //genera un numero casuale da 10000 a 99999 (per il codice CP)
 
-        console.log(codeCP);
+        // stampa del codice nel biglietto
         document.querySelector("#code").innerHTML = codeCP;
 
 
 
         const carrozza= Math.floor(Math.random() * 20 + 1); //genera un numero casuale da 1 a 20 (per la carrozza)
 
-        console.log(carrozza);
+        // stampa del numero della carrozza nel biglietto
         document.querySelector("#carriage").innerHTML = carrozza;
     }
 
@@ -80,6 +100,8 @@ buttonCalcolaElemnt.addEventListener("click",
 
 buttonClearElemnt.addEventListener("click",
     function(){
+
+        // pulizia degli input
         document.querySelector("#fullName").value="";
         document.querySelector("#age").value="";
         document.querySelector("#travel").value="";
