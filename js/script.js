@@ -11,9 +11,10 @@ Sulla base di queste informazioni dovrà calcolare il prezzo totale del bigliett
 
 
 
-let buttonElemnt = document.querySelector("#btn");
+let buttonCalcolaElemnt = document.querySelector("#btn-calcola");
+let buttonClearElemnt = document.querySelector("#btn-clear");
 
-buttonElemnt.addEventListener("click",
+buttonCalcolaElemnt.addEventListener("click",
     function(){
         const busRate=0.21;
 
@@ -52,10 +53,12 @@ buttonElemnt.addEventListener("click",
 
 
 
-buttonElemnt.addEventListener("click",
+buttonCalcolaElemnt.addEventListener("click",
     function(){
         let fullName= document.querySelector("#fullName").value;
         document.querySelector("#ticketFullName").innerHTML = fullName;
+
+        document.querySelector("#pedice").className = "active";
 
 
         const codeCP= Math.floor(Math.random() * 90000 + 10000); //genera un numero casuale da 10000 a 99999 (per il codice CP)
@@ -71,6 +74,16 @@ buttonElemnt.addEventListener("click",
         document.querySelector("#carriage").innerHTML = carrozza;
     }
 
+
+)
+
+
+buttonClearElemnt.addEventListener("click",
+    function(){
+        document.querySelector("#fullName").value="";
+        document.querySelector("#age").value="";
+        document.querySelector("#travel").value="";
+    }
 
 )
 

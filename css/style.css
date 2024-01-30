@@ -2,6 +2,9 @@ body{
     background-color: blue;
 }
 
+
+
+
 header{
     color:yellow;
 }
@@ -11,9 +14,19 @@ header p{
 }
 
 #ticketNamBox{
+    position:relative;
     background-color: gray;
 }
 
+#pedice{
+    display: none;
+    position: absolute;
+    bottom:0;
+    left:24px;
+    
+    font-size: 12px;
+    
+}
 
 
 td{
@@ -23,4 +36,10 @@ td{
 
 #title-ticket{
     color:yellow;
+}
+
+
+
+.active{
+    display: block !important;
 }
